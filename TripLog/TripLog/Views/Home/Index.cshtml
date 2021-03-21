@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Trip>
+@{
+    ViewBag.Title = "Trip Logs";
+}
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Destination</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Accomodations</th>
+                <th scope="col">Things To Do</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Trip trip in Model)
+            {
+                <tr>
+                    <td>@trip.Destination</td>
+                    <td>@trip.StartDate.ToString("MM/dd/yyyy")</td>
+                    <td>@trip.EndDate.ToString("MM/dd/yyyy")</td>
+                    <td>@trip.Accomodation</td>
+                    <td>
+                        @trip.ThingsToDo1<br />
+                        @trip.ThingsToDo2<br />
+                        @trip.ThingsToDo3
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
